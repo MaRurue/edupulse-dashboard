@@ -58,12 +58,23 @@ input {
     border: 1px solid #2d7a6b !important;
 }
 
-/* The dropdown menu options container */
-ul[data-baseweb="menu"], ul[role="listbox"], div[data-baseweb="popover"] > div {
+/* comprehensive catch for dropdown menus (they are rendered in a popover outside the main app) */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"] > div,
+div[data-baseweb="popover"] > div > div,
+div[data-baseweb="popover"] > div > div > div,
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] li,
+ul[role="listbox"],
+div[role="listbox"] {
     background-color: #0F3528 !important;
+    color: #ffffff !important;
 }
-li[role="option"] {
-    background-color: transparent !important;
+
+/* Hover state for the dropdown items */
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="popover"] li[aria-selected="true"] {
+    background-color: #2d7a6b !important;
 }
 
 /* Fix chatbot background visibility (dark green) */
