@@ -1,4 +1,4 @@
-Date,Student ID,GPA,Missed_Assignments,Financial_Aid,Study_Hours,Risk_Score,Risk_Level
-2026-03-26,W222023,3.4,1,0,32.5,0.0,Low
-2026-03-27,W220000,3.7,5,0,29.5,0.0,Low
-2026-03-30,W260102,3.7,1,0,25.5,0.0,Low
+Date,Student ID,GPA,Missed_Assignments,Financial_Aid,Study_Hours,Engagement_Score,Clubs_Sports,Risk_Score,Risk_Level
+2026-03-26,W222023,3.4,1,0,32.5,5.0,1,0.0,Low
+2026-03-27,W220000,3.7,5,0,29.5,5.0,1,0.0,Low
+2026-03-30,W260102,3.7,1,0,25.5,5.0,1,0.0,Low

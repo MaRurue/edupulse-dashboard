@@ -8,6 +8,9 @@ import altair as alt
 import numpy as np
 import os # Import os module to check for file existence
 import time
+# --- Constants and Config ---
+ADMIN_PASSWORD = os.environ.get('EDUPULSE_ADMIN_PASS', 'adminpass')
+
 # --- Streamlit Page Configuration ---
 
 st.set_page_config(
@@ -787,7 +790,6 @@ df_dropout_insights = load_dropout_data_for_insights()
 
 
 # --- Authentication and Views ---
-ADMIN_PASSWORD = os.environ.get('EDUPULSE_ADMIN_PASS', 'adminpass')
 
 # Initialize session state
 if 'logged_in' not in st.session_state:
