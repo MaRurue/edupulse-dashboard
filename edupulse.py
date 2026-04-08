@@ -27,42 +27,49 @@ html, body, [data-baseweb="appContainer"], .stApp {
     background: linear-gradient(180deg, #1B4D3E 0%, #0F3528 50%, #1B4D3E 100%) !important;
 }
 
-/* Force text to be white everywhere (overrides light mode) */
-h1, h2, h3, p, span, div, label {
+/* Force text to be white everywhere */
+h1, h2, h3, p, span, div, label, li, input {
     color: #ffffff !important;
 }
 
-header {
+/* Ensure header is transparent */
+header[data-testid="stHeader"] {
     background-color: transparent !important;
 }
 
-/* Button styling - green with yellow accents */
-.stButton>button {
+/* All Buttons (including the Login Form submit button) */
+button {
     background-color: #2d7a6b !important;
-    color: #ffffff !important;
     border: 2px solid #fff59d !important;
-    font-weight: bold;
+    border-radius: 5px !important;
 }
-.stButton>button:hover {
+button:hover {
     background-color: #fff59d !important;
-    color: #1B4D3E !important;
+}
+button:hover p, button:hover span, button:hover div {
+    color: #1B4D3E !important; 
 }
 
-/* Textboxes updated to black background with white text */
-.stSelectbox>div, .stTextInput>div, .stNumberInput>div, .stSlider {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+/* Textboxes, Password fields, and Selectbox backgrounds */
+[data-baseweb="select"] > div, 
+[data-baseweb="input"] > div,
+input {
+    background-color: #0F3528 !important;
+    border: 1px solid #2d7a6b !important;
 }
 
-/* Fix the dropdown menu options for Admin/Student so they aren't white-on-white */
-ul[data-baseweb="menu"], ul[data-baseweb="menu"] li, [data-baseweb="menu"] div {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+/* The dropdown menu options container */
+ul[data-baseweb="menu"], ul[role="listbox"], div[data-baseweb="popover"] > div {
+    background-color: #0F3528 !important;
+}
+li[role="option"] {
+    background-color: transparent !important;
 }
 
-/* Fix chatbot background visibility */
+/* Fix chatbot background visibility (dark green) */
 [data-testid="stChatMessage"] {
-    background-color: #000000 !important;
+    background-color: rgba(31, 77, 62, 0.8) !important;
+    border: 1px solid #2d7a6b !important;
     border-radius: 10px;
     padding: 10px;
 }
@@ -76,13 +83,15 @@ ul[data-baseweb="menu"], ul[data-baseweb="menu"] li, [data-baseweb="menu"] div {
 .stTabs [data-baseweb="tab-list"] {
     background-color: transparent !important;
 }
-.stTabs [data-baseweb="tab"] {
+.stTabs [data-baseweb="tab"] p {
     color: #fff59d !important;
+    font-weight: bold;
 }
 
-/* Form elements */
-.stForm {
-    background: rgba(31, 77, 62, 0.3) !important;
+/* Form background container */
+[data-testid="stForm"] {
+    background: rgba(15, 53, 40, 0.8) !important;
+    border: 1px solid #2d7a6b !important;
     border-radius: 10px;
     padding: 20px;
 }
