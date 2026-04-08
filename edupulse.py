@@ -19,7 +19,52 @@ st.set_page_config(
     initial_sidebar_state="expanded" # Keep sidebar expanded by default
 )
 
-# --- Custom styling block removed to allow Streamlit's native dark/light theme to render correctly ---
+# --- Custom styling: deep bottle green background and yellow accents ---
+st.markdown("""
+<style>
+/* Main background gradient */
+.stApp, [data-baseweb="appContainer"] {
+    background: linear-gradient(180deg, #1B4D3E 0%, #0F3528 50%, #1B4D3E 100%) !important;
+}
+
+/* Ensure header is transparent to show the gradient */
+header[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
+/* Button styling - green with yellow accents */
+.stButton>button {
+    background-color: #2d7a6b !important;
+    color: #ffffff !important;
+    border: 2px solid #fff59d !important;
+    font-weight: bold;
+}
+.stButton>button:hover {
+    background-color: #fff59d !important;
+    color: #1B4D3E !important;
+}
+
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: #0F3528 !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: transparent !important;
+}
+.stTabs [data-baseweb="tab"] {
+    color: #fff59d !important;
+}
+
+/* Form elements */
+.stForm {
+    background: rgba(31, 77, 62, 0.3) !important;
+    border-radius: 10px;
+    padding: 20px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 def safe_rerun():
     """Try to rerun the Streamlit script; fallback to mutating query params if rerun API isn't available."""
