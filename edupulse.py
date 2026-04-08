@@ -19,54 +19,7 @@ st.set_page_config(
     initial_sidebar_state="expanded" # Keep sidebar expanded by default
 )
 
-# --- Custom styling: deep bottle green background with white text and yellow accents ---
-st.markdown("""
-<style>
-html, body, [data-baseweb="appContainer"], .stApp {
-    background: linear-gradient(180deg, #1B4D3E 0%, #0F3528 50%, #1B4D3E 100%) !important;
-}
-h1, h2, h3, p, span, div, label {
-    color: #ffffff !important;
-}
-/* Title styling */
-header {
-    background-color: #1B4D3E;
-}
-/* Button styling - green with yellow accents */
-.stButton>button {
-    background-color: #2d7a6b !important;
-    color: #ffffff !important;
-    border: 2px solid #fff59d !important;
-    font-weight: bold;
-}
-.stButton>button:hover {
-    background-color: #fff59d !important;
-    color: #1B4D3E !important;
-}
-/* Input boxes */
-.stSelectbox>div, .stTextInput>div, .stNumberInput>div, .stSlider {
-    background: rgba(255, 255, 255, 0.15) !important;
-    color: #ffffff !important;
-}
-/* Sidebar */
-[data-testid="stSidebar"] {
-    background-color: #0F3528 !important;
-}
-/* Tabs */
-.stTabs [data-baseweb="tab-list"] {
-    background-color: #1B4D3E !important;
-}
-.stTabs [data-baseweb="tab"] {
-    color: #fff59d !important;
-}
-/* Form elements */
-.stForm {
-    background: rgba(31, 77, 62, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-}
-</style>
-""", unsafe_allow_html=True)
+# --- Custom styling block removed to allow Streamlit's native dark/light theme to render correctly ---
 
 def safe_rerun():
     """Try to rerun the Streamlit script; fallback to mutating query params if rerun API isn't available."""
@@ -189,7 +142,7 @@ elif st.session_state.nav_selection == "Login":
 @st.cache_resource
 def load_chatbot_components():
     """
-    Loads and trains the necessary components for the chatbot (data, vectorizer, model).
+    Loading and training the necessary components for the chatbot (data, vectorizer, model).
     This function is cached using st.cache_resource to run only once when the app starts.
     """
     # 1. Data Preparation: Synthetic dataset of student queries and intents
