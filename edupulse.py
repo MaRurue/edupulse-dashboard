@@ -23,12 +23,16 @@ st.set_page_config(
 st.markdown("""
 <style>
 /* Main background gradient */
-.stApp, [data-baseweb="appContainer"] {
+html, body, [data-baseweb="appContainer"], .stApp {
     background: linear-gradient(180deg, #1B4D3E 0%, #0F3528 50%, #1B4D3E 100%) !important;
 }
 
-/* Ensure header is transparent to show the gradient */
-header[data-testid="stHeader"] {
+/* Force text to be white everywhere (overrides light mode) */
+h1, h2, h3, p, span, div, label {
+    color: #ffffff !important;
+}
+
+header {
     background-color: transparent !important;
 }
 
@@ -42,6 +46,25 @@ header[data-testid="stHeader"] {
 .stButton>button:hover {
     background-color: #fff59d !important;
     color: #1B4D3E !important;
+}
+
+/* Textboxes updated to black background with white text */
+.stSelectbox>div, .stTextInput>div, .stNumberInput>div, .stSlider {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Fix the dropdown menu options for Admin/Student so they aren't white-on-white */
+ul[data-baseweb="menu"], ul[data-baseweb="menu"] li, [data-baseweb="menu"] div {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Fix chatbot background visibility */
+[data-testid="stChatMessage"] {
+    background-color: #000000 !important;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* Sidebar background */
